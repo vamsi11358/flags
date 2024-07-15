@@ -10,14 +10,15 @@ export default function Data() {
     fetch("https://xcountriesapi.onrender.com/all")
       .then((response) => {
         if (!response.ok) {
-          //throw new Error(`HTTP error! status: ${response.status}`);
-          console.log(response.status);
+          throw new Error(`HTTP error! status: ${response.status}`);
+          //console.log(response.status);
         }
         return response.json();
       })
       .then((result) => {
-        setData(result);
-        setFilteredData(result);
+        //console.log(result,'res')
+        setData(result.data);
+        setFilteredData(result.data);
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
