@@ -7,7 +7,7 @@ export default function Flags(props) {
     <>
     <div className="countryCard">
       <img src={props.data.flag} alt="flag" style={{ width: '100%', height: 'auto' }} />
-      <h6 className="title">{props.data.name}</h6>
+      <h2 className="title">{props.data.name}</h2>
     </div>
     </>
   );
