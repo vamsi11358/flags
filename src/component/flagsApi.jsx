@@ -7,17 +7,17 @@ export default function Data() {
   const [filteredData, setFilteredData] = useState([]);
 
   useEffect(() => {
-    // Fetch data from the API
     fetch("https://xcountries-backend.azurewebsites.net/all")
       .then((response) => {
         if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
+          //throw new Error(`HTTP error! status: ${response.status}`);
+          console.log(response.status);
         }
         return response.json();
       })
       .then((result) => {
         setData(result);
-        setFilteredData(result); // Initialize filteredData with the full data set
+        setFilteredData(result);
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
