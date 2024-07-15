@@ -7,7 +7,7 @@ export default function Data() {
   const [filteredData, setFilteredData] = useState([]);
 
   useEffect(() => {
-    fetch("https://xcountries-backend.azurewebsites.net/all")
+    fetch("https://xcountriesapi.onrender.com/all")
       .then((response) => {
         if (!response.ok) {
           //throw new Error(`HTTP error! status: ${response.status}`);
